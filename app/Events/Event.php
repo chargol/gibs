@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Gibs\Events;
 
 abstract class Event {
 

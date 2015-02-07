@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace Gibs\Services;
 
-use App\User;
+use Gibs\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
