@@ -28,7 +28,7 @@ return [
 		"array"   => ":attribute muss zwischen :min und :max Einträge besitzen.",
 	],
 	"boolean"              => "Das :attribute Feld darf nur Wahr oder Falsch sein.",
-	"confirmed"            => "Die :attribute Bestätigung stimmt nicht überein.",
+	"confirmed"            => "Die :attribute-Bestätigung stimmt nicht überein.",
 	"date"                 => ":attribute ist kein gültiges Datum.",
 	"date_format"          => ":attribute stimmt nicht mit dem Format :format überein.",
 	"different"            => ":attribute und :other dürfen nicht identisch sein.",
@@ -57,7 +57,7 @@ return [
 	"not_in"               => "Das ausgewählte :attribute ist nicht gültig.",
 	"numeric"              => ":attribute muss eine Zahl sein.",
 	"regex"                => "Das Format von :attribute ist ungültig.",
-	"required"             => "Das :attribute Feld wird benötigt.",
+	"required"             => "Das :attribute-Feld wird benötigt.",
 	"required_if"          => ":attribute wird benötigt falls :other dem Wert :value entspricht.",
 	"required_with"        => ":attribute wird benötigt wenn :values vorhanden ist.",
 	"required_with_all"    => ":attribute wird benötigt wenn :values vorhanden ist.",
@@ -102,6 +102,10 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'name' => 'Name',
+		'password' => 'Passwort',
+		'email' => 'E-Mail',
+	],
 
 ];
