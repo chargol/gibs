@@ -12,6 +12,7 @@
 */
 
 Route::resource('area', 'AreaController');
+Route::resource('field', 'FieldController');
 
 Route::get('/', 'WelcomeController@index');
 
