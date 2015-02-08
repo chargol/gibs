@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource('area', 'AreaController');
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');

@@ -103,9 +103,10 @@ return [
 	*/
 
 	'attributes' => [
-		'name' => 'Name',
+		'name'     => 'Name',
 		'password' => 'Passwort',
-		'email' => 'E-Mail',
+		'email'    => 'E-Mail',
+		'shortcut' => 'Abkürzung'
 	],
 
 ];
