@@ -33,7 +33,7 @@ class AreaController extends Controller {
 	{
 		$areas = $this->area->orderBy('name')->get();
 
-		return view('area.index', compact('areas'));
+		return view('areas.index', compact('areas'));
 	}
 
 	/**
