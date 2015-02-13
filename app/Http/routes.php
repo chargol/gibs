@@ -11,14 +11,17 @@
 |
 */
 
-Route::resource('area', 'AreaController');
+
+Route::get('area/{id}/fields', 'FieldController@index');
+Route::get('field/create/{id}/area', 'FieldController@create');
 Route::resource('field', 'FieldController');
+Route::resource('area', 'AreaController');
 
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Route::controllers([
+// 	'auth' => 'Auth\AuthController',
+// 	'password' => 'Auth\PasswordController',
+// ]);

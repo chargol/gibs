@@ -3,6 +3,8 @@
 use Gibs\Http\Requests;
 use Gibs\Http\Controllers\Controller;
 
+use Gibs\Http\Requests\FieldCreateRequest;
+
 use Gibs\Area;
 use Gibs\Field;
 
@@ -11,14 +13,26 @@ use Illuminate\Http\Request;
 class FieldController extends Controller {
 
 	/**
+	 * Area Repo
+	 * @var Gibs\Area
+	 */
+	protected $areas;
+
+	/**
+	 * Field Repo
+	 * @var Gibs\Field
+	 */
+	protected $fields;
+
+	/**
 	 * Constructor
 	 * @param Gibs\Area  $area 
 	 * @param Gibs\Field $field
 	 */
-	public function __construct(Area $area, Field $field) 
+	public function __construct(Area $areas, Field $fields) 
 	{
-		$this->area = $area;
-		$this->field = $field;
+		$this->areas = $areas;
+		$this->fields = $fields;
 	}
 
 	/**
@@ -26,9 +40,11 @@ class FieldController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($area_id)
 	{
-		//
+		$area = $this->areas->find($area_id);
+
+		return view('fields.index', compact('area'));
 	}
 
 	/**
@@ -36,9 +52,10 @@ class FieldController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		return view()
+	public function create($area_id)
+	{ 
+		$area = $this->areas->find($area_id);
+		return view('fields.create', compact('area'));
 	}
 
 	/**
@@ -46,9 +63,15 @@ class FieldController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		//
+	public function store(FieldCreateRequest $request)
+	{	
+		$area = $this->areas->find($request->area_id);
+		$fields = $area->fields()->orderBy('number', 'desc')->get();
+		$request['number'] = ($fields->count() > 0) ? ++$fields->first()->number : 1;
+
+		$this->fields->create($request->all());
+
+		return redirect('/area/'.$area->id.'/fields');
 	}
 
 	/**

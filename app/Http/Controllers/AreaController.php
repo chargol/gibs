@@ -13,15 +13,15 @@ class AreaController extends Controller {
 	 * Area-Model
 	 * @var Gibs\Area
 	 */
-	protected $area;
+	protected $areas;
 
 	/**
 	 * Constructer
 	 * @param Gibs\Area $area
 	 */
-	public function __construct(Area $area) 
+	public function __construct(Area $areas) 
 	{
-		$this->area = $area;
+		$this->areas = $areas;
 	}
 
 	/**
@@ -31,7 +31,7 @@ class AreaController extends Controller {
 	 */
 	public function index()
 	{
-		$areas = $this->area->orderBy('name')->get();
+		$areas = $this->areas->orderBy('name')->get();
 
 		return view('areas.index', compact('areas'));
 	}
@@ -53,7 +53,7 @@ class AreaController extends Controller {
 	 */
 	public function store(AreaCreateRequest $request)
 	{
-		$this->area->create($request->all());
+		$this->areas->create($request->all());
 
 		return redirect('/area');
 	}
