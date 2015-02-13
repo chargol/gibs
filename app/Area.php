@@ -15,4 +15,14 @@ class Area extends Model {
 		$this->attributes['shortcut'] = strtolower($value);
 	}
 
+	/**
+	 * Relationship to Gibs\Field
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function fields()
+	{
+		return $this->hasMany('Gibs\Field');
+	}
+	
+
 }
