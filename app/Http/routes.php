@@ -11,7 +11,10 @@
 |
 */
 
+Route::resource('owner', 'OwnerController', ['except' => 'index']);
+
 Route::resource('publisher', 'PublisherController');
+
 Route::get('area/{id}/fields', [
 	'as'   => 'area.fields',
 	'uses' => 'FieldController@index'

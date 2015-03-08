@@ -25,7 +25,11 @@
 						@foreach ($area->fields as $field)
 							<tr>
 								<td>{{ $field->number }}</td>
-								<td>{{ $field->description }}</td>
+								<td>
+									<a href="{{ route('field.show', $field->id) }}">
+										{{ $field->description }}
+									</a>
+								</td>
 							</tr>
 						@endforeach
 					</tbody>

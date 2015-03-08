@@ -16,23 +16,23 @@ class FieldController extends Controller {
 	 * Area Repo
 	 * @var Gibs\Area
 	 */
-	protected $areas;
+	protected $areaRepo;
 
 	/**
 	 * Field Repo
 	 * @var Gibs\Field
 	 */
-	protected $fields;
+	protected $fieldRepo;
 
 	/**
 	 * Constructor
 	 * @param Gibs\Area  $area 
 	 * @param Gibs\Field $field
 	 */
-	public function __construct(Area $areas, Field $fields) 
+	public function __construct(Area $areaRepo, Field $fieldRepo) 
 	{
-		$this->areas = $areas;
-		$this->fields = $fields;
+		$this->areaRepo = $areaRepo;
+		$this->fieldRepo = $fieldRepo;
 	}
 
 	/**
@@ -42,7 +42,7 @@ class FieldController extends Controller {
 	 */
 	public function index($shortcut)
 	{
-		$area = $this->areas->where('shortcut', $shortcut)->first();
+		$area = $this->areaRepo->where('shortcut', $shortcut)->first();
 		return view('fields.index', compact('area'));
 	}
 
@@ -53,7 +53,7 @@ class FieldController extends Controller {
 	 */
 	public function create($shortcut)
 	{ 
-		$area = $this->areas->where('shortcut', $shortcut)->first();
+		$area = $this->areaRepo->where('shortcut', $shortcut)->first();
 		return view('fields.create', compact('area'));
 	}
 
@@ -64,11 +64,11 @@ class FieldController extends Controller {
 	 */
 	public function store(FieldCreateRequest $request)
 	{	
-		$area = $this->areas->find($request->area_id);
-		$fields = $area->fields()->orderBy('number', 'desc')->get();
-		$request['number'] = ($fields->count() > 0) ? ++$fields->first()->number : 1;
+		$area = $this->areaRepo->find($request->area_id);
+		$fieldRepo = $area->fields()->orderBy('number', 'desc')->get();
+		$request['number'] = ($fieldRepo->count() > 0) ? ++$fieldRepo->first()->number : 1;
 
-		$this->fields->create($request->all());
+		$this->fieldRepo->create($request->all());
 
 		return redirect()->route('area.fields', $area->shortcut);
 	}
@@ -81,7 +81,9 @@ class FieldController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$field = $this->fieldRepo->find($id);
+
+		return view('fields.show', compact('field'));
 	}
 
 	/**
