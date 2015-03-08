@@ -103,10 +103,14 @@ return [
 	*/
 
 	'attributes' => [
-		'name'     => 'Name',
-		'password' => 'Passwort',
-		'email'    => 'E-Mail',
-		'shortcut' => 'Abkürzung'
+		'name'      => 'Name',
+		'password'  => 'Passwort',
+		'email'     => 'E-Mail',
+		'shortcut'  => 'Abkürzung',
+		'lastname'  => 'Nachname',
+		'firstname' => 'Vorname',
+		'email'     => 'E-Mail',
+		'phone'     => 'Telefon'
 	],
 
 ];

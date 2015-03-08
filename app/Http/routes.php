@@ -11,10 +11,16 @@
 |
 */
 
-
-Route::get('area/{id}/fields', 'FieldController@index');
-Route::get('field/create/{id}/area', 'FieldController@create');
-Route::resource('field', 'FieldController');
+Route::resource('publisher', 'PublisherController');
+Route::get('area/{id}/fields', [
+	'as'   => 'area.fields',
+	'uses' => 'FieldController@index'
+]);
+Route::get('field/create/{shortcut}/area', [
+	'as'   => 'field.create',
+	'uses' => 'FieldController@create'
+]);
+Route::resource('field', 'FieldController', ['except' => ['index','create']]);
 Route::resource('area', 'AreaController');
 
 Route::get('/', 'WelcomeController@index');

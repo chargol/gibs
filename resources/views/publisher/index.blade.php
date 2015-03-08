@@ -5,10 +5,10 @@
 		
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
-				<h4>{{ $area->name }}</h4>
+				<h4>Verkündiger</h4>
 			</div>
 			<div class="col-md-2 text-right">
-				<a href="/field/create/{{ $area->shortcut }}/area" class="btn btn-sm btn-primary">Gebiet hinzufügen</a>
+				<a href="{{ route('publisher.create') }}" class="btn btn-sm btn-primary">Verkündiger hinzufügen</a>
 			</div>
 		</div>
 
@@ -17,15 +17,19 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Nummer</th>
-							<th>Bezeichnung</th>
+							<th>Nachname</th>
+							<th>Vorname</th>
+							<th>Mailadresse</th>
+							<th>Telefon</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($area->fields as $field)
+						@foreach ($publishers as $publisher)
 							<tr>
-								<td>{{ $field->number }}</td>
-								<td>{{ $field->description }}</td>
+								<td>{{ $publisher->lastname }}</td>
+								<td>{{ $publisher->firstname }}</td>
+								<td>{{ $publisher->email }}</td>
+								<td>{{ $publisher->phone }}</td>
 							</tr>
 						@endforeach
 					</tbody>

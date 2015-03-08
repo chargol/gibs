@@ -40,10 +40,9 @@ class FieldController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($area_id)
+	public function index($shortcut)
 	{
-		$area = $this->areas->find($area_id);
-
+		$area = $this->areas->where('shortcut', $shortcut)->first();
 		return view('fields.index', compact('area'));
 	}
 
@@ -52,9 +51,9 @@ class FieldController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create($area_id)
+	public function create($shortcut)
 	{ 
-		$area = $this->areas->find($area_id);
+		$area = $this->areas->where('shortcut', $shortcut)->first();
 		return view('fields.create', compact('area'));
 	}
 
@@ -71,7 +70,7 @@ class FieldController extends Controller {
 
 		$this->fields->create($request->all());
 
-		return redirect('/area/'.$area->id.'/fields');
+		return redirect()->route('area.fields', $area->shortcut);
 	}
 
 	/**

@@ -22,7 +22,7 @@
 						@foreach ($areas as $area)
 							<tr>
 								<td>
-									<a href="/areal/{{ $area->shortcut }}/fields"> 
+									<a href="/area/{{ $area->shortcut }}/fields"> 
 										{{ $area->name }} ({{ $area->shortcut }})
 									</a>
 								</td>
