@@ -7,6 +7,8 @@ use Gibs\Http\Requests\FieldCreateRequest;
 
 use Gibs\Area;
 use Gibs\Field;
+use Gibs\Owner;
+
 
 use Illuminate\Http\Request;
 
@@ -25,14 +27,21 @@ class FieldController extends Controller {
 	protected $fieldRepo;
 
 	/**
+	 * Owner Repo
+	 * @var Gibs\Owner
+	 */
+	protected $ownerRepo;
+
+	/**
 	 * Constructor
 	 * @param Gibs\Area  $area 
 	 * @param Gibs\Field $field
 	 */
-	public function __construct(Area $areaRepo, Field $fieldRepo) 
+	public function __construct(Area $areaRepo, Field $fieldRepo, Owner $ownerRepo) 
 	{
 		$this->areaRepo = $areaRepo;
 		$this->fieldRepo = $fieldRepo;
+		$this->ownerRepo = $ownerRepo;
 	}
 
 	/**

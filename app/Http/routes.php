@@ -11,7 +11,11 @@
 |
 */
 
-Route::resource('owner', 'OwnerController', ['except' => 'index']);
+Route::get('field/{id}/issue', [
+	'as'   => 'field.issue',
+	'uses' => 'OwnerController@create'
+]);
+Route::resource('owner', 'OwnerController', ['except' => ['index', 'create']]);
 
 Route::resource('publisher', 'PublisherController');
 

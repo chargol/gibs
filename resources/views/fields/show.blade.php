@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
+			<div class="col-md-5 col-md-offset-2">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -27,6 +27,8 @@
 						</tr>
 					</tbody>
 				</table>
+				<a href="{{ route('field.issue', $field->id) }}" class="btn btn-primary btn-sm">Ausgeben</a>
+				<a href="#" class="btn btn-default btn-sm">Rückgabe</a>
 			</div>
 		</div>
 
