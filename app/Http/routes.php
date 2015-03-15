@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('field/return/{owner_id}', [
+	'as'   => 'field.return',
+	'uses' => 'OwnerController@returnField'
+]);
 Route::get('field/{id}/issue', [
 	'as'   => 'field.issue',
 	'uses' => 'OwnerController@create'

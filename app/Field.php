@@ -14,6 +14,15 @@ class Field extends Model {
 	{
 		return $this->belongsTo('Gibs\Area');
 	}
+
+	/**
+	 * Relationship to Gibs\Owner
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ownings()
+	{
+		return $this->hasMany('Gibs\Owner');
+	}
 	
 
 }

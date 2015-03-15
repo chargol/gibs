@@ -92,7 +92,16 @@ class FieldController extends Controller {
 	{
 		$field = $this->fieldRepo->find($id);
 
-		return view('fields.show', compact('field'));
+		// Check if field is issued
+		$ownings = $field->ownings;
+		$field_is_available = true; 
+		foreach ($ownings as $owner) {
+			if (empty($owner->return_at)) {
+				$field_is_available = false;
+			}
+		}
+
+		return view('fields.show', compact('field', 'field_is_available'));
 	}
 
 	/**

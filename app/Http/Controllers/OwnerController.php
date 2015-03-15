@@ -4,9 +4,13 @@ use Gibs\Http\Requests;
 use Gibs\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Gibs\Http\Requests\OwnerCreateRequest;
 
 use Gibs\Field;
 use Gibs\Publisher;
+use Gibs\Owner;
+
+use Carbon\Carbon;
 
 class OwnerController extends Controller {
 
@@ -23,13 +27,20 @@ class OwnerController extends Controller {
 	protected $publisherRepo;
 
 	/**
+	 * Owner-Repositpry
+	 * @var Gibs\Owner;
+	 */
+	protected $ownerRepo;
+
+	/**
 	 * Constructor
 	 * @param Field $fieldRepo
 	 */
-	public function __construct(Field $fieldRepo, Publisher $publisherRepo) 
+	public function __construct(Field $fieldRepo, Publisher $publisherRepo, Owner $ownerRepo) 
 	{
 		$this->fieldRepo = $fieldRepo;
 		$this->publisherRepo = $publisherRepo;
+		$this->ownerRepo = $ownerRepo;
 	}
 
 
@@ -61,10 +72,28 @@ class OwnerController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(OwnerCreateRequest $request)
 	{
-		dd($request->all());
-		return 'Neuen Owner speichern';
+		$request['issue_at'] = Carbon::now();
+
+		$this->ownerRepo->create($request->all()); 
+
+		return redirect()->route('field.show', $request->field_id);
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function returnField($owner_id)
+	{
+		$owner = $this->ownerRepo->find($owner_id);
+		$owner->return_at = Carbon::now();
+
+		$owner->save();
+		
+		return redirect()->back();
 	}
 
 	/**

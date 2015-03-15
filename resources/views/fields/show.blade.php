@@ -20,15 +20,25 @@
 						</tr>
 					</thead>
 					<tbody>
+						@foreach ($field->ownings as $owner)
 						<tr>
-							<td>Name des Verkündigers</td>
-							<td>Ausgabedatum</td>
-							<td>Rückgabedatum</td>
+							<td>{{ $owner->publisher->fullName() }}</td>
+							<td>{{ $owner->issue_at->toFormattedDateString() }}</td>
+							<td>
+								@if (isset($owner->return_at))
+									{{ $owner->return_at->toFormattedDateString() }}
+								@else
+									<a href="{{ route('field.return', $owner->id) }}" class="btn btn-default btn-sm">Rückgabe</a>
+								@endif
+								
+							</td>
 						</tr>
+						@endforeach
 					</tbody>
 				</table>
-				<a href="{{ route('field.issue', $field->id) }}" class="btn btn-primary btn-sm">Ausgeben</a>
-				<a href="#" class="btn btn-default btn-sm">Rückgabe</a>
+				@if ($field_is_available)
+					<a href="{{ route('field.issue', $field->id) }}" class="btn btn-primary btn-sm">Ausgeben</a>
+				@endif
 			</div>
 		</div>
 
