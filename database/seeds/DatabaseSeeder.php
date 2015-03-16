@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 class DatabaseSeeder extends Seeder {
 
 	/**
+	 * Tables to truncate
+	 * @var array
+	 */
+	protected $tables = [
+		'areas',
+		'fields',
+		'owners',
+		'publishers',
+		'users',
+		'password_resets'
+	];
+
+	/**
 	 * Run the database seeds.
 	 *
 	 * @return void
@@ -14,7 +27,18 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->cleanUpDatabase();
+
+		$this->call('AreasTableSeeder');
+		$this->call('FieldsTableSeeder');
+		$this->call('PublishersTableSeeder');
+		$this->call('OwnersTableSeeder');
+	}
+
+	private function cleanUpDatabase() {
+		foreach ($this->tables as $table) {
+			DB::table($table)->truncate();
+		}
 	}
 
 }

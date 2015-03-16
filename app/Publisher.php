@@ -25,18 +25,5 @@ class Publisher extends Model {
 		return $this->firstname . " " . $this->lastname;
 	}
 	
-	/*
-		Attribute Setters
-	 */
-
-	public function setEmailAttribute($value)
-	{
-		return (is_null($value)) ? NULL : $value;
-	}
-
-	public function setPhoneAttribute($value)
-	{
-		return (is_null($value)) ? NULL : $value;
-	}
 	
 }
