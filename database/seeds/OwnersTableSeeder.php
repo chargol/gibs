@@ -9,7 +9,9 @@ use Carbon\Carbon;
 class OwnersTableSeeder extends Seeder {
 
     public function run()
-    {
+    {   
+        $faker = Faker\Factory::create();
+
         $fields = Gibs\Field::all();
 
         foreach ($fields as $field) {
@@ -39,12 +41,25 @@ class OwnersTableSeeder extends Seeder {
         			$generate = false;
         		}
 
+                $publisher_id = rand(1,31);
+
         		TestDummy::create('Gibs\Owner', [
         			'field_id' => $field->id,
-                    'publisher_id' => rand(1,31),
+                    'publisher_id' => $publisher_id,
         			'issue_at' => $issue_date,
         			'return_at' => $return_date
         		]);
+
+                // Für jede Ausgabe, kommen evt. 1-3 Bearbeitungen in Frage
+                for ($i=1; $i <= rand(1,3); $i++) { 
+                    $start_date = $issue_date;
+                    $end_date = (is_null($return_date)) ? Carbon::now() : $return_date;
+                    TestDummy::create('Gibs\Protocol', [
+                        'field_id' => $field->id,
+                        'publisher_id' => $publisher_id,
+                        'worked_at' => $faker->dateTimeBetween($start_date->toDateTimeString(), $end_date->toDateTimeString())
+                    ]);
+                }
         		
         		if (!is_null($return_date)) {
         			$issue_date = $return_date->copy();

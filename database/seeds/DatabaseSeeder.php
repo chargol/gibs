@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PublishersTableSeeder');
 		$this->call('FieldsTableSeeder');
 		$this->call('OwnersTableSeeder');
-		$this->call('ProtocolsTableSeeder');
+		// $this->call('ProtocolsTableSeeder');
 	}
 
 	private function cleanUpDatabase() {
