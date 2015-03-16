@@ -39,10 +39,9 @@ class OwnersTableSeeder extends Seeder {
         			$generate = false;
         		}
 
-        		
-
         		TestDummy::create('Gibs\Owner', [
         			'field_id' => $field->id,
+                    'publisher_id' => rand(1,31),
         			'issue_at' => $issue_date,
         			'return_at' => $return_date
         		]);

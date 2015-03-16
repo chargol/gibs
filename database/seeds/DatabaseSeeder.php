@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder {
 		'areas',
 		'fields',
 		'owners',
-		'publishers',
 		'users',
-		'password_resets'
+		'password_resets',
+		'protocols',
+		'publishers',
 	];
 
 	/**
@@ -30,9 +31,10 @@ class DatabaseSeeder extends Seeder {
 		$this->cleanUpDatabase();
 
 		$this->call('AreasTableSeeder');
-		$this->call('FieldsTableSeeder');
 		$this->call('PublishersTableSeeder');
+		$this->call('FieldsTableSeeder');
 		$this->call('OwnersTableSeeder');
+		$this->call('ProtocolsTableSeeder');
 	}
 
 	private function cleanUpDatabase() {
