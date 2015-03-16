@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('field/{id}/worked', [
+	'as'   => 'field.worked',
+	'uses' => 'ProtocolController@create'
+]);
+
+Route::resource('protocol', 'ProtocolController', ['except' => ['index', 'create']]);
+
 Route::get('field/return/{owner_id}', [
 	'as'   => 'field.return',
 	'uses' => 'OwnerController@returnField'

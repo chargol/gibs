@@ -61,7 +61,7 @@
 						@endforeach
 					</tbody>
 				</table>
-				
+				<a href="{{ route('field.worked', $field->id) }}" class="btn btn-success btn-sm">Neuer Eintrag</a>
 			</div>
 
 		</div>

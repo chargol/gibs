@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Protocol extends Model {
 
-	protected $fillable = ['publisher_id', 'worked_at'];
+	protected $fillable = ['field_id', 'publisher_id', 'worked_at'];
 
 	/**
 	 * Raltionships
