@@ -14,8 +14,6 @@ class Publisher extends Model {
 		return $this->hasMany('Gibs\Owner');
 	}
 	
-
-
 	/*
 		HelpMethos
 	 */

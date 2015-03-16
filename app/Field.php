@@ -23,6 +23,15 @@ class Field extends Model {
 	{
 		return $this->hasMany('Gibs\Owner');
 	}
+
+	/**
+	 * Relationship to Gibs\Protocol
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function protocols()
+	{
+		return $this->hasMany('Gibs\Protocol');
+	}
 	
 
 }

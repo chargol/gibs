@@ -26,6 +26,7 @@ $factory('Gibs\Owner', [
 ]);
 
 $factory('Gibs\Protocol', [
-	'publisher_id' => 'factory:Gibs\Publisher',
+	'field_id'     => 'factory:Gibs\Field',
+	'publisher_id' => 'factory:Gibs\Publisher',	
 	'worked_at'    => $faker->date,
 ]);

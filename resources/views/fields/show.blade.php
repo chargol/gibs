@@ -5,12 +5,14 @@
 		
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
-				<h4>{{ $field->area->name }} {{ $field->number }} <small>{{ $field->description }}</small></h4>
+				<h3>{{ $field->area->name }} {{ $field->number }} <small>{{ $field->description }}</small></h3>
 			</div>
 		</div>
 
 		<div class="row">
+			
 			<div class="col-md-5 col-md-offset-2">
+				<h4>Ausgaben</h4>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -40,6 +42,28 @@
 					<a href="{{ route('field.issue', $field->id) }}" class="btn btn-primary btn-sm">Ausgeben</a>
 				@endif
 			</div>
+
+			<div class="col-md-3">
+				<h4>Bearbeitungen</h4>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Verkündiger</th>
+							<th>Bearbeitungsdatum</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach ($protocols as $protocol) 
+						<tr>
+							<td>{{ $protocol->publisher->fullName() }}</td>
+							<td>{{ $protocol->worked_at->toFormattedDateString() }}</td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+				
+			</div>
+
 		</div>
 
 	</div>

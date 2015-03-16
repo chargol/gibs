@@ -9,7 +9,6 @@ use Gibs\Area;
 use Gibs\Field;
 use Gibs\Owner;
 
-
 use Illuminate\Http\Request;
 
 class FieldController extends Controller {
@@ -91,6 +90,8 @@ class FieldController extends Controller {
 	public function show($id)
 	{
 		$field = $this->fieldRepo->find($id);
+		$protocols = $field->protocols;
+		$protocols = $protocols->sortBy('worked_at');
 
 		// Check if field is issued
 		$ownings = $field->ownings;
@@ -101,7 +102,7 @@ class FieldController extends Controller {
 			}
 		}
 
-		return view('fields.show', compact('field', 'field_is_available'));
+		return view('fields.show', compact('field', 'field_is_available', 'protocols'));
 	}
 
 	/**

@@ -15,8 +15,9 @@ class CreateProtocolsTable extends Migration {
 		Schema::create('protocols', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->date('worked_at');
+			$table->integer('field_id')->unsigned();
 			$table->integer('publisher_id')->unsigned();
+			$table->date('worked_at');
 			$table->timestamps();
 		});
 	}
