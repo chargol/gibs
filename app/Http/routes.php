@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('field/overdue/all', [
+	'as' => 'field.overdue.all',
+	'uses' => 'FilterController@overdueAll'
+]);
+
 Route::get('field/{id}/worked', [
 	'as'   => 'field.worked',
 	'uses' => 'ProtocolController@create'
