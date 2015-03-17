@@ -41,7 +41,7 @@ class OwnersTableSeeder extends Seeder {
         			$generate = false;
         		}
 
-                $publisher_id = rand(1,31);
+                $publisher_id = rand(1,30);
 
         		TestDummy::create('Gibs\Owner', [
         			'field_id' => $field->id,
