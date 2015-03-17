@@ -18,16 +18,18 @@
 						<tr>
 							<th>Gebiet</th>
 							<th>Ausgabedauer</th>
-							<th>Letzte Bearbeitung</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach ($ownings as $owning)
 						<tr>
-							<td><strong>{{ $owning->field->area->name }} {{ $owning->field->number }}</strong></td>
-							<td>12 Monate</td>
-							<td>vor 3 Monaten</td>
+							<td>
+								<a href="{{ route('field.show', $owning->field_id) }}" class="">
+									<strong>{{ $owning->field->area->name }} {{ $owning->field->number }}</strong>
+								</a>
+							</td>
+							<td>{{ $owning->issue_at->diffInMonths(Carbon\Carbon::now()) }} Monate</td>
 							<td>
 								<a href="{{ route('field.return', $owning->id) }}" class="btn btn-default btn-sm">Rückgabe</a>
 								<a href="{{ route('field.workedBy', [$owning->field_id, $publisher->id]) }}" class="btn btn-success btn-sm">Bearbeitet</a>
