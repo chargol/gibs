@@ -14,6 +14,14 @@ class Owner extends Model {
 	{
 		return $this->belongsTo('Gibs\Publisher');
 	}
+
+	/**
+	 * Relationship to Field
+	 */
+	public function field()
+	{
+		return $this->belongsTo('Gibs\Field');
+	}
 	
 
 	/**

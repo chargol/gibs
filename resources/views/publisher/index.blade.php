@@ -21,6 +21,7 @@
 							<th>Vorname</th>
 							<th>Mailadresse</th>
 							<th>Telefon</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -30,6 +31,9 @@
 								<td>{{ $publisher->firstname }}</td>
 								<td>{{ $publisher->email }}</td>
 								<td>{{ $publisher->phone }}</td>
+								<td>
+									<a href="{{ route('publisher.show', $publisher->id) }}" class="btn btn-default btn-sm">Gebiete</a>
+								</td>
 							</tr>
 						@endforeach
 					</tbody>

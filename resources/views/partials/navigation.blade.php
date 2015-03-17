@@ -12,7 +12,7 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="{{ route('area.index') }}">Areale</a></li>
+				<li><a href="{{ route('area.index') }}">Gebiete</a></li>
 				<li><a href="{{ route('publisher.index') }}">Verkündiger</a></li>
 			</ul>
 

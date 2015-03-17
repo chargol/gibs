@@ -16,6 +16,16 @@ Route::get('field/overdue/all', [
 	'uses' => 'FilterController@overdueAll'
 ]);
 
+Route::get('field/return/{owner_id}', [
+	'as'   => 'field.return',
+	'uses' => 'OwnerController@returnField'
+]);
+
+Route::get('field/{field_id}/worked/{publisher_id}', [
+	'as'   => 'field.workedBy',
+	'uses' => 'ProtocolController@worked'
+]);
+
 Route::get('field/{id}/worked', [
 	'as'   => 'field.worked',
 	'uses' => 'ProtocolController@create'
@@ -23,10 +33,7 @@ Route::get('field/{id}/worked', [
 
 Route::resource('protocol', 'ProtocolController', ['except' => ['index', 'create']]);
 
-Route::get('field/return/{owner_id}', [
-	'as'   => 'field.return',
-	'uses' => 'OwnerController@returnField'
-]);
+
 Route::get('field/{id}/issue', [
 	'as'   => 'field.issue',
 	'uses' => 'OwnerController@create'

@@ -81,6 +81,23 @@ class ProtocolController extends Controller {
 	}
 
 	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function worked($field_id, $publisher_id)
+	{
+		$data = [
+			'field_id' => $field_id,
+			'publisher_id' => $publisher_id,
+			'worked_at' => Carbon::now()
+		]; 
+		$this->protocolRepo->create($data);
+		
+		return redirect()->back();
+	}
+
+	/**
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id

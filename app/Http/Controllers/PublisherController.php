@@ -64,8 +64,12 @@ class PublisherController extends Controller {
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		//
+	{	
+		$publisher = $this->publisherRepo->find($id);
+		$ownings = $publisher->ownings()->where('return_at', NULL)->get();
+
+
+		return view('publishers.show', compact('publisher', 'ownings'));
 	}
 
 	/**
