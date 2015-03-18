@@ -16,6 +16,7 @@
 						@foreach ($overdueFields as $field)
 						<tr>
 							<td>{{ $field->area->name }} {{ $field->number }}</td>
+							<td>{{ $field->protocols->sortBy('worked_at')->last()->worked_at->diffInMonths(Carbon\Carbon::now()) }} Monate</td>
 						</tr>
 						@endforeach
 					</tbody>
