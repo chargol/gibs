@@ -20,9 +20,18 @@
 </head>
 <body>
 	
-	@include('partials.navigation')
+	<div class="sidebar">
+		Sidebar
+	</div>
 
-	@yield('content')
+	<div class="page">
+		<div class="headroom">
+			<h2>Headroom</h2>
+		</div>
+		<div class="page-content">
+			<p>Content</p>
+		</div>
+	</div>
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
