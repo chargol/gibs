@@ -1,0 +1,39 @@
+/*==========  GLOBAL COLORS  ==========*/
+
+$clPaper: rgb(252,252,252);
+
+$clNeutral: rgb(246, 246, 246);
+$clNeutralDark: rgb(235, 235, 235);
+$clNeutralDarker: rgb(212,212,212);
+$clNeutralDarkest: rgb(171, 171, 171);
+
+
+/*==========  CI-COLORS  ==========*/
+
+$clPrimary: rgb(140, 195, 0);
+$clPrimaryDark: rgb(126, 182, 0);
+
+
+/*==========  SIGNAL-COLORS  ==========*/
+
+$clInfo: rgb(56,166,233);
+$clInfoLight: rgb(91, 192, 255);
+
+$clWarning: rgb(255,187,0);
+$clWarningLight: rgb(255,221,60);
+
+$clDanger: rgb(222,92,0);
+$clDangerLight: rgb(255,130,48);
+
+
+/*==========  ACTION-COLORS  ==========*/
+
+$clDelete: $clDanger;
+$clDeleteLight: $clDangerLight;
+
+
+/*==========  TEXT-COLORS  ==========*/
+
+$clText: rgb(71,71,71);
+
+

@@ -1,0 +1,16 @@
+/**
+*
+* GIBS App Stylesheet Combiner
+*
+**/
+
+
+/*==========  Dependecies  ==========*/
+@import "../bower_components/csstyle/csstyle";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "mixins/declare-font-face";
+
+
+/*==========  Globals  ==========*/
+@import "vars/colors";
+@import "vars/fontfamilies";

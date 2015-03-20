@@ -22,5 +22,5 @@ elixir(function(mix) {
     	proxy: 'gibs.app'
     });
 
-    mix.sass('app.scss');
+    mix.rubySass('app.scss', 'public/css');
 });

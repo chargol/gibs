@@ -1,0 +1,15 @@
+/**
+*
+* Settings for global font-families
+*
+**/
+
+/*==========  Imports  ==========*/
+
+@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Regular", normal);
+@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Light", 100);
+@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Bold", bold);
+
+/*==========  Variables  ==========*/
+
+$ffPrimary: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
