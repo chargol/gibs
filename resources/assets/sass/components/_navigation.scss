@@ -1,0 +1,30 @@
+/**
+*
+* Component navigation
+*
+**/
+
+@include component(navi) {
+	margin: 30px 0;
+	&:nth-of-type(1) { margin-top: 60px; }
+	padding: 0;
+
+	list-style-type: none;
+
+	@include part(point) {
+
+		a {
+			display: block;
+			margin: 0;
+			padding: 0;
+			padding-left: $spaceLeftSidebar;
+
+			width: 100%;
+
+			font-size: 17px;
+			font-family: $ffPrimary;
+			line-height: 200%;
+		}
+
+	}
+}

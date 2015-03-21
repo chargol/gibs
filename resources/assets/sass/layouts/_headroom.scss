@@ -1,0 +1,10 @@
+/**
+*
+* Layoutstyle for headroom-component
+*
+**/
+
+@include component(headroom) {
+	height: $heightHeadroom;
+	background-color: $clNeutralDark;
+}

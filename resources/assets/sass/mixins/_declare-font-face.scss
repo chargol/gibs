@@ -11,7 +11,7 @@ $font_path: "/fonts";
 		font-family: '#{$font_family_name}';
 		src: url("#{$font_path}/#{$font_filename}.eot");
 		src: url("#{$font_path}/#{$font_filename}.eot?#iefix") format('embedded-opentype'),
-			 url("#{$font_path}/#{$font_filename}.woff") format('woff'),
+			 url("#{$font_path}/#{$font_filename}.otf.woff") format('woff'),
 			 url("#{$font_path}/#{$font_filename}.ttf") format('truetype'),
 			 url("#{$font_path}/#{$font_filename}.svg##{$font_family_name}") format('svg');
 		font-weight: $font_weight;

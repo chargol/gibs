@@ -18,18 +18,37 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body id="csstyle">
 	
 	<div class="sidebar">
-		Sidebar
+		<div class="logo-box">
+			<h1>Gibs</h1>
+		</div>
+		<div class="congregation-box">
+			<p class="congregation">Neuwied</p>
+		</div>
+		
+		<ul class="navi">
+			<li class="navi__point"><a href="#">Übersicht</a></li>
+			<li class="navi__point"><a href="#">Monatsübersicht</a></li>
+		</ul>
+		<ul class="navi">
+			<li class="navi__point"><a href="#">Gebiete</a></li>
+			<li class="navi__point"><a href="#">Gruppen</a></li>
+			<li class="navi__point"><a href="#">Verkündiger</a></li>
+		</ul>
+		<ul class="navi">
+			<li class="navi__point"><a href="#">Verwaltung</a></li>
+		</ul>
+
 	</div>
 
 	<div class="page">
 		<div class="headroom">
-			<h2>Headroom</h2>
+			Headroom
 		</div>
 		<div class="page-content">
-			<p>Content</p>
+			Content
 		</div>
 	</div>
 

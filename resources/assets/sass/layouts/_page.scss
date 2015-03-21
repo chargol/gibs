@@ -1,0 +1,10 @@
+/**
+*
+* Layoutstyle for page-component
+*
+**/
+
+@include component(page) {
+	margin-left: $widthSidebar;
+	background-color: $clPaper;
+}

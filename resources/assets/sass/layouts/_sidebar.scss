@@ -1,0 +1,13 @@
+/**
+*
+* Layoutstyle for sidebar-component
+*
+**/
+
+@include component(sidebar) {
+	position: fixed;
+	top: 0; bottom: 0;
+	width: $widthSidebar;
+
+	background-color: $clNeutralDark;
+}

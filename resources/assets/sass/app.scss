@@ -14,3 +14,18 @@
 /*==========  Globals  ==========*/
 @import "vars/colors";
 @import "vars/fontfamilies";
+@import "vars/settings";
+
+/*==========  Elements  ==========*/
+@import "elements/html";
+@import "elements/body";
+
+/*==========  Layout  ==========*/
+@import "layouts/sidebar";
+@import "layouts/page";
+@import "layouts/headroom";
+
+/*==========  Components  ==========*/
+@import "components/logo-box";
+@import "components/congregation-box";
+@import "components/navigation";

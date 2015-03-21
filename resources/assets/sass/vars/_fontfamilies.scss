@@ -8,7 +8,8 @@
 
 @include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Regular", normal);
 @include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Light", 100);
-@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Bold", bold);
+@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Semibold", 500);
+@include declare-font-face("Source Sans Pro", "sourcesanspro/SourceSansPro-Bold", 600);
 
 /*==========  Variables  ==========*/
 

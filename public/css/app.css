@@ -5592,24 +5592,143 @@ button.close {
 @font-face {
   font-family: "Source Sans Pro";
   src: url("/fonts/sourcesanspro/SourceSansPro-Regular.eot");
-  src: url("/fonts/sourcesanspro/SourceSansPro-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Regular.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Regular.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Regular.svg#Source Sans Pro") format("svg");
+  src: url("/fonts/sourcesanspro/SourceSansPro-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Regular.otf.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Regular.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Regular.svg#Source Sans Pro") format("svg");
   font-weight: normal;
   font-style: normal;
   font-stretch: normal; }
 @font-face {
   font-family: "Source Sans Pro";
   src: url("/fonts/sourcesanspro/SourceSansPro-Light.eot");
-  src: url("/fonts/sourcesanspro/SourceSansPro-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Light.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Light.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Light.svg#Source Sans Pro") format("svg");
+  src: url("/fonts/sourcesanspro/SourceSansPro-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Light.otf.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Light.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Light.svg#Source Sans Pro") format("svg");
   font-weight: 100;
   font-style: normal;
   font-stretch: normal; }
 @font-face {
   font-family: "Source Sans Pro";
+  src: url("/fonts/sourcesanspro/SourceSansPro-Semibold.eot");
+  src: url("/fonts/sourcesanspro/SourceSansPro-Semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Semibold.otf.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Semibold.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Semibold.svg#Source Sans Pro") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal; }
+@font-face {
+  font-family: "Source Sans Pro";
   src: url("/fonts/sourcesanspro/SourceSansPro-Bold.eot");
-  src: url("/fonts/sourcesanspro/SourceSansPro-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Bold.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Bold.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Bold.svg#Source Sans Pro") format("svg");
-  font-weight: bold;
+  src: url("/fonts/sourcesanspro/SourceSansPro-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/sourcesanspro/SourceSansPro-Bold.otf.woff") format("woff"), url("/fonts/sourcesanspro/SourceSansPro-Bold.ttf") format("truetype"), url("/fonts/sourcesanspro/SourceSansPro-Bold.svg#Source Sans Pro") format("svg");
+  font-weight: 600;
   font-style: normal;
   font-stretch: normal; }
 /*==========  Variables  ==========*/
+/**
+*
+* Variables the whole app
+*
+**/
+/*==========  Elements  ==========*/
+/**
+*
+* Style of HTML-tag "html"
+*
+**/
+html {
+  height: 100%; }
+
+/**
+*
+* Style of HTML-tag "body"
+*
+**/
+body {
+  height: 100%;
+  background-color: #fcfcfc; }
+
+/*==========  Layout  ==========*/
+/**
+*
+* Layoutstyle for sidebar-component
+*
+**/
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 230px;
+  background-color: #ebebeb; }
+
+/**
+*
+* Layoutstyle for page-component
+*
+**/
+.page {
+  margin-left: 230px;
+  background-color: #fcfcfc; }
+
+/**
+*
+* Layoutstyle for headroom-component
+*
+**/
+.headroom {
+  height: 115px;
+  background-color: #ebebeb; }
+
+/*==========  Components  ==========*/
+/**
+*
+* logo-box - Component
+*
+**/
+.logo-box {
+  padding-top: 19px;
+  padding-left: 30px;
+  height: 115px;
+  background-color: #8cc300; }
+  .logo-box h1 {
+    margin: 0;
+    color: #474747;
+    font-size: 39px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-transform: uppercase; }
+
+/**
+*
+* Component congregation-box
+*
+**/
+.congregation-box {
+  margin-top: -36px;
+  padding-top: 9.5px;
+  padding-left: 30px;
+  height: 36px;
+  background-color: #7eb600; }
+  .congregation-box p {
+    margin: 0;
+    color: #474747;
+    font-size: 15px;
+    line-height: 100%;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500; }
+
+/**
+*
+* Component navigation
+*
+**/
+.navi {
+  margin: 30px 0;
+  padding: 0;
+  list-style-type: none; }
+  .navi:nth-of-type(1) {
+    margin-top: 60px; }
+  .navi__point a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+    width: 100%;
+    font-size: 17px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 200%; }
 
 /*# sourceMappingURL=app.css.map */
