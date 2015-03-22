@@ -1,41 +1,42 @@
 @extends('app')
 
-@section('content')
-	<div class="container-fluid">
-		
-		<div class="row">
-			<div class="col-md-6 col-md-offset-2">
-				<h4>{{ $area->name }}</h4>
-			</div>
-			<div class="col-md-2 text-right">
-				<a href="/field/create/{{ $area->shortcut }}/area" class="btn btn-sm btn-primary">Gebiet hinzufügen</a>
-			</div>
-		</div>
+@section('app.page-title', $area->name)
 
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Nummer</th>
-							<th>Bezeichnung</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach ($area->fields as $field)
-							<tr>
-								<td>{{ $field->number }}</td>
-								<td>
-									<a href="{{ route('field.show', $field->id) }}">
-										{{ $field->description }}
-									</a>
-								</td>
-							</tr>
-						@endforeach
-					</tbody>
-				</table>
-			</div>
-		</div>
+@section('app.headroom')
+	<a href="/field/create/{{ $area->shortcut }}/area" class="btn btn-sm btn-primary">Gebiet hinzufügen</a>
+@endsection
 
+@section('app.content')
+	<div class="row">
+		<div class="col-md-5">
+			
+			@foreach ($area->fields as $field)
+				<div class="cardbox row">
+					
+					<div class="cardbox__card col-md-8">
+						<div class="cardbox__content row">
+							<div class="cardbox__item col-md-3">
+								<p class="cardbox__title">
+									{{ $area->shortcut }}{{ $field->number }}
+								</p>
+							</div>
+							<div class="cardbox__item col-md-9">
+								<p class="cardbox__detail">
+									{{ $field->description }}
+								</p>
+							</div>
+						</div>
+						<a href="{{ route('field.show', $field->id) }}" class="cardbox__action">></a>
+					</div>
+
+					<ul class="cardbox__menue col-md-4">
+						<li>Löschen</li>
+					</ul>
+
+				</div>
+			@endforeach
+
+		</div>
 	</div>
+	
 @stop

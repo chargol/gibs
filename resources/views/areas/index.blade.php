@@ -8,29 +8,40 @@
 
 @section('app.content')
 
-		<div class="row">
-			<div class="col-md-12">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Areale</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach ($areas as $area)
-							<tr>
-								<td>
-									<a href="/area/{{ $area->shortcut }}/fields"> 
-										{{ $area->name }} ({{ $area->shortcut }})
-									</a>
-								</td>
-								<td></td>
-							</tr>
-						@endforeach
-					</tbody>
-				</table>
-			</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			
+			@foreach ($areas as $area)
+				
+				<div class="cardbox row">
+					
+					<div class="cardbox__card col-md-8">
+						<div class="cardbox__content row">
+							<div class="cardbox__item col-md-6">
+								<p class="cardbox__title">
+									{{ $area->name }}
+									<small>({{ $area->shortcut }})</small>
+								</p>
+							</div>
+							<div class="cardbox__item col-md-6">
+								<p class="cardbox__detail --color">
+									{{ $area->fields->count() }} Gebiete
+								</p>
+							</div>
+						</div>
+						<a href="{{ route('area.fields', $area->shortcut) }}" class="cardbox__action">></a>
+					</div>
+
+					<ul class="cardbox__menue col-md-4">
+						<li>Löschen</li>
+					</ul>
+
+				</div>	
+			
+			@endforeach
+
 		</div>
+	</div>
 
 @stop

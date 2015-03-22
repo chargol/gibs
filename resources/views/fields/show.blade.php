@@ -1,17 +1,13 @@
 @extends('app')
 
-@section('content')
-	<div class="container-fluid">
-		
-		<div class="row">
-			<div class="col-md-6 col-md-offset-2">
-				<h3>{{ $field->area->name }} {{ $field->number }} <small>{{ $field->description }}</small></h3>
-			</div>
-		</div>
 
-		<div class="row">
+@section('app.page-title', $field->area->name . " " . $field->number)
+
+@section('app.content')
+
+	<div class="row">
 			
-			<div class="col-md-5 col-md-offset-2">
+			<div class="col-md-5">
 				<h4>Ausgaben</h4>
 				<table class="table table-striped">
 					<thead>
@@ -64,7 +60,6 @@
 				<a href="{{ route('field.worked', $field->id) }}" class="btn btn-success btn-sm">Neuer Eintrag</a>
 			</div>
 
-		</div>
 
 	</div>
 @stop

@@ -1,0 +1,66 @@
+/**
+*
+* Component "cardbox"
+*
+**/
+
+$heightCardBox: 50px;
+
+@include component(cardbox) {
+	background-color: green;
+	margin-bottom: 5px;
+	
+	height: $heightCardBox;
+
+	overflow: hidden; 
+	
+	@include part(card) {
+		height: 100%;
+		background-color: $clPaper;	
+		overflow: hidden; 
+	}
+
+	@include part(content) {
+		padding-top: 12px;
+	}
+
+	@include part(title) {
+		color: $clText;
+		font-size: 17px;
+		font-family: $ffPrimary;
+		font-weight: 500;
+
+		small { font-weight: normal; }
+	}
+
+	@include part(action) {
+		position: absolute;
+		top: 3px; right: 3px;  
+		height: ($heightCardBox - 6); 
+		width: ($heightCardBox - 6);
+
+		color: $clText;
+		text-align: center;
+
+		background-color: $clNeutralDarker;
+
+		&:hover {
+			background-color: $clNeutralDarkest;
+			text-decoration: none;
+		}
+	}
+
+	@include part(detail) {
+		padding-top: 1px;
+
+		color: $clNeutralDarkest;
+		font-size: 15px;
+		font-family: $ffPrimary;
+		font-weight: 500;
+
+
+		@include option(color) {
+			color: $clPrimary;
+		}
+	}
+}
