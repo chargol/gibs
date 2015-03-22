@@ -4,3 +4,4 @@
 composer.lock
 /resources/assets/bower_components/*
 .DS_Store
+.sass-cache/
