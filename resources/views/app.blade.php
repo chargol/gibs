@@ -20,51 +20,17 @@
 </head>
 <body id="csstyle">
 	
-	<div class="sidebar">
-		<div class="logo-box">
-			<h1>Gibs</h1>
-		</div>
-		<div class="congregation-box">
-			<p class="congregation">Neuwied</p>
-		</div>
-		
-		<ul class="navi">
-			<li class="navi__point"><a href="#">Übersicht</a></li>
-			<li class="navi__point"><a href="#">Monatsübersicht</a></li>
-		</ul>
-		<ul class="navi">
-			<li class="navi__point"><a href="#">Gebiete</a></li>
-			<li class="navi__point"><a href="#">Gruppen</a></li>
-			<li class="navi__point"><a href="#">Verkündiger</a></li>
-		</ul>
-		<ul class="navi">
-			<li class="navi__point"><a href="#">Verwaltung</a></li>
-		</ul>
-
-	</div>
+	@include('partials.sidebar')
 
 	<div class="page">
-		<div class="headroom">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10">
-						<h2 class="page-title">Headroom</h2>
-					</div>
-					<div class="col-md-2">
-						<a href="#">Buttonarea</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		@include('partials.headroom')
+		
 		<div class="page-content">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h3>Content</h3>
-					</div>
-				</div>
+				@yield('app.content')
 			</div>
 		</div>
+		
 	</div>
 
 	<!-- Scripts -->

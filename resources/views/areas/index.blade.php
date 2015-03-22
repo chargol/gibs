@@ -1,16 +1,15 @@
 @extends('app')
 
-@section('content')
-	<div class="container-fluid">
-		
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 text-right">
-				<a href="/area/create" class="btn btn-sm btn-primary">Neues Areal anlegen</a>
-			</div>
-		</div>
+@section('app.page-title', 'Gebietsareale')
+
+@section('app.headroom')
+	<a href="/area/create" class="btn btn-sm btn-primary">Neues Areal anlegen</a>
+@stop
+
+@section('app.content')
 
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-12">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -34,5 +33,4 @@
 			</div>
 		</div>
 
-	</div>
 @stop

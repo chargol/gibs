@@ -25,7 +25,7 @@ class AreaController extends Controller {
 	}
 
 	/**
-	 * Display a listing of the resource.
+	 * Auflistung der Gebietsareale
 	 *
 	 * @return Response
 	 */
