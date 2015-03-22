@@ -5641,6 +5641,20 @@ body {
   height: 100%;
   background-color: #fcfcfc; }
 
+/**
+*
+* Styling of title HTML-Elements
+*
+**/
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 125%; }
+
+h3 {
+  font-size: 27px;
+  font-weight: 500; }
+
 /*==========  Layout  ==========*/
 /**
 *
@@ -5669,6 +5683,7 @@ body {
 *
 **/
 .headroom {
+  padding-top: 40px;
   height: 115px;
   background-color: #ebebeb; }
 
@@ -5731,5 +5746,31 @@ body {
     font-size: 17px;
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 200%; }
+    .navi__point a:hover {
+      text-decoration: none;
+      background-color: #d4d4d4; }
+    .navi__point a:visited, .navi__point a:focus {
+      text-decoration: none; }
+
+/**
+*
+* Component "page-title"
+*
+**/
+.page-title {
+  margin: 0;
+  font-size: 39px;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 100%;
+  text-transform: uppercase; }
+
+/**
+*
+* Component "page-content"
+*
+**/
+.page-content {
+  padding-top: 36px; }
 
 /*# sourceMappingURL=app.css.map */

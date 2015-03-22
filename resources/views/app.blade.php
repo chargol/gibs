@@ -45,10 +45,25 @@
 
 	<div class="page">
 		<div class="headroom">
-			Headroom
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h2 class="page-title">Headroom</h2>
+					</div>
+					<div class="col-md-2">
+						<a href="#">Buttonarea</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="page-content">
-			Content
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Content</h3>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

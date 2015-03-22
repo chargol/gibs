@@ -1,0 +1,15 @@
+/**
+*
+* Component "page-title"
+*
+**/
+
+@include component(page-title) {
+	margin: 0;
+
+	font-size: 39px;
+	font-family: $ffPrimary;
+	font-weight: 100;
+	line-height: 100%;
+	text-transform: uppercase;
+}

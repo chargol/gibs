@@ -5,6 +5,7 @@
 **/
 
 @include component(headroom) {
+	padding-top: (($heightHeadroom - $heightCongregationBox) - 39);
 	height: $heightHeadroom;
 	background-color: $clNeutralDark;
 }
