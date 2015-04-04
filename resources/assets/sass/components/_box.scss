@@ -1,0 +1,45 @@
+/**
+*
+* "box"-Component
+*
+**/
+
+$heightBox: 80px; 
+
+@include component(box) {
+	display: block;
+	
+	margin-bottom: 10px;
+	padding: 15px 0;
+
+	height: $heightBox;
+	
+	color: $clText;
+	border-radius: 3px;
+	background-color: $clNeutralDarkest;
+	overflow: hidden;
+
+	
+
+	@include part(title) {
+		font-size: 18px;
+		font-family: $ffPrimary;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	@include part(subtitle) {
+		color: lighten($clText, 10);
+		font-size: 15px;
+		font-family: $ffPrimary;
+		text-align: center;
+	}
+
+	&:hover,
+	&:focus {
+		color: $clPaper;
+		background-color: $clAction;
+		text-decoration: none;
+	}
+
+}

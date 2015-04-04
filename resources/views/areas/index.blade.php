@@ -3,49 +3,24 @@
 @section('app.page-title', 'Gebietsareale')
 
 @section('app.headroom')
-	<a href="/area/create" class="btn btn-sm btn-primary">Neues Areal anlegen</a>
+	<a href="/area/create" class="gb-btn">Hinzufügen</a>
 @stop
 
 @section('app.content')
-
-
-	<div class="row">
-		<div class="col-md-6">
 			
-			@foreach ($areas as $area)
-				
-				<div class="cardbox row">
-					
-					<div class="cardbox__card col-md-8">
-						<div class="cardbox__content row">
-							<div class="cardbox__item col-md-6">
-								<p class="cardbox__title">
-									{{ $area->name }}
-									<small>({{ $area->shortcut }})</small>
-								</p>
-							</div>
-							<div class="cardbox__item col-md-6">
-								<p class="cardbox__detail --color">
-									{{ $area->fields->count() }} Gebiete
-								</p>
-							</div>
-						</div>
-						<a href="{{ route('area.fields', $area->shortcut) }}" class="cardbox__action">
-							<span class="gbicon gbicon-chevron-right"></span>
-						</a>
-					</div>
+	@foreach (array_chunk($areas->all(), 4) as $row)
+		<div class="row">
 
-					<ul class="cardbox__menue col-md-4">
-						<li>
-							<a href="#"><span class="gbicon gbicon-trashcan"></span></a>
-						</li>
-					</ul>
-
-				</div>	
-			
-			@endforeach
+		@foreach ($row as $area)
+			<div class="col-sm-3 ">
+				<a href="{{ route('area.fields', $area->id) }}" class="box">
+					<div class="box__title"> {{ $area->name }} </div>
+					<div class="box__subtitle"> {{ $area->fields->count() }} Gebiete</div>
+				</a>
+			</div>
+		@endforeach
 
 		</div>
-	</div>
+	@endforeach
 
 @stop

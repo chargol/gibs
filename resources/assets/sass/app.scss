@@ -4,8 +4,8 @@
 *
 **/
 
-
 /*==========  Dependecies  ==========*/
+@import "vars/bootstrap";
 @import "../bower_components/csstyle/csstyle";
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "mixins/declare-font-face";
@@ -34,3 +34,5 @@
 @import "components/page-title";
 @import "components/page-content";
 @import "components/cardbox";
+@import "components/box";
+@import "components/gb-btn";

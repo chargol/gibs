@@ -9,31 +9,30 @@ use Illuminate\Http\Request;
 
 
 class AreaController extends Controller {
-	/**
-	 * Area-Model
-	 * @var Gibs\Area
-	 */
-	protected $areas;
 
 	/**
-	 * Constructer
-	 * @param Gibs\Area $area
-	 */
-	public function __construct(Area $areas) 
-	{
-		$this->areas = $areas;
-	}
-
-	/**
-	 * Auflistung der Gebietsareale
+	 * Lists all areas.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$areas = $this->areas->orderBy('name')->get();
+		$areas = Area::orderBy('name')->get();
 
 		return view('areas.index', compact('areas'));
+	}
+
+	/**
+	 * Lists all fields of a given area-resource.
+	 *
+	 * @return Response
+	 */
+	public function fields($id)
+	{
+		$area = Area::find($id);
+
+		return "Gebiete von $area->name";
+		// return view('areas.fields', compact('area'));
 	}
 
 	/**

@@ -9,7 +9,7 @@
 
 <ul class="navi">
 	<li class="navi__point">
-		<a href="{{ route('area.index') }}">Gebiete</a>
+		<a href="{{ route('areas') }}">Gebiete</a>
 	</li>
 	<li class="navi__point">
 		<a href="#">Gruppen</a>

@@ -53,4 +53,20 @@ Route::get('field/create/{shortcut}/area', [
 Route::resource('field', 'FieldController', ['except' => ['index','create']]);
 Route::resource('area', 'AreaController');
 
-Route::get('/', 'AreaController@index');
+/*==========  Area-Routes  ==========*/
+
+Route::get('areal/{id}/gebiete', [
+	'as'   => 'area.fields',
+	'uses' => 'AreaController@fields'
+]);
+
+Route::get('areale', [
+	'as'   => 'areas',
+	'uses' => 'AreaController@index'
+]);
+
+/*==========  Home-Page  ==========*/
+
+Route::get('/', function() {
+	return redirect()->route('areas.index');
+});
