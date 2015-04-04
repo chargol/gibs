@@ -1,7 +1,5 @@
 var elixir = require('laravel-elixir');
 
-require('laravel-elixir-browser-sync');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,13 +12,5 @@ require('laravel-elixir-browser-sync');
  */
 
 elixir(function(mix) {
-    mix.browserSync([
-    	'app/**/*',
-    	'public/**/*',
-    	'resources/views/**/*'
-    ], {
-    	proxy: 'gibs.app'
-    });
-
     mix.rubySass('app.scss', 'public/css');
 });

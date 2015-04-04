@@ -21,6 +21,9 @@
 
 <ul class="navi">
 	<li class="navi__point">
-		<a href="#">Verwaltung</a>
+		<a href="#">
+			<span class="gbicon gbicon-"></span>
+			Verwaltung
+		</a>
 	</li>
 </ul>

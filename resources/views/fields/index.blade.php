@@ -15,7 +15,7 @@
 					
 					<div class="cardbox__card col-md-8">
 						<div class="cardbox__content row">
-							<div class="cardbox__item col-md-3">
+							<div class="cardbox__item col-md-3  --color">
 								<p class="cardbox__title">
 									{{ $area->shortcut }}{{ $field->number }}
 								</p>
@@ -26,11 +26,15 @@
 								</p>
 							</div>
 						</div>
-						<a href="{{ route('field.show', $field->id) }}" class="cardbox__action">></a>
+						<a href="{{ route('field.show', $field->id) }}" class="cardbox__action">
+							<span class="gbicon gbicon-chevron-right"></span>
+						</a>
 					</div>
 
 					<ul class="cardbox__menue col-md-4">
-						<li>Löschen</li>
+						<li>
+							<a href="#"><span class="gbicon gbicon-trashcan"></span></a>
+						</li>
 					</ul>
 
 				</div>

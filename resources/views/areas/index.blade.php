@@ -30,11 +30,15 @@
 								</p>
 							</div>
 						</div>
-						<a href="{{ route('area.fields', $area->shortcut) }}" class="cardbox__action">></a>
+						<a href="{{ route('area.fields', $area->shortcut) }}" class="cardbox__action">
+							<span class="gbicon gbicon-chevron-right"></span>
+						</a>
 					</div>
 
 					<ul class="cardbox__menue col-md-4">
-						<li>Löschen</li>
+						<li>
+							<a href="#"><span class="gbicon gbicon-trashcan"></span></a>
+						</li>
 					</ul>
 
 				</div>	

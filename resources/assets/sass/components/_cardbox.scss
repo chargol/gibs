@@ -4,10 +4,9 @@
 *
 **/
 
-$heightCardBox: 50px;
+$heightCardBox: 100px;
 
 @include component(cardbox) {
-	background-color: green;
 	margin-bottom: 5px;
 	
 	height: $heightCardBox;
@@ -21,7 +20,17 @@ $heightCardBox: 50px;
 	}
 
 	@include part(content) {
+		
+	}
+
+	@include part(item) {
 		padding-top: 12px;
+		
+		@include option(color) {
+			text-align: center;
+			height: $heightCardBox;
+			background-color: $clPrimary;
+		}
 	}
 
 	@include part(title) {
@@ -36,15 +45,20 @@ $heightCardBox: 50px;
 	@include part(action) {
 		position: absolute;
 		top: 3px; right: 3px;  
+
+		padding-top: 7px;
 		height: ($heightCardBox - 6); 
 		width: ($heightCardBox - 6);
 
 		color: $clText;
+		font-size: 24px;
 		text-align: center;
 
 		background-color: $clNeutralDarker;
 
-		&:hover {
+		&:hover,
+		&:focus {
+			color: $clPaper;
 			background-color: $clNeutralDarkest;
 			text-decoration: none;
 		}
@@ -61,6 +75,35 @@ $heightCardBox: 50px;
 
 		@include option(color) {
 			color: $clPrimary;
+		}
+	}
+
+	@include part(menue) {
+		margin: 0;
+		padding: 3px 0 0 10px;
+
+		list-style-type: none;
+		li {			
+			display: inline-block;
+
+			a {
+				display: inline-block;
+				padding: 6px 9px;
+				width: $heightCardBox - 6px;
+				height: $heightCardBox - 6px;
+
+				color: $clText;
+				font-size: 21px;
+
+				border: 3px solid $clNeutralDark;
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					color: $clPaper;
+					border-color: $clNeutralDarker;
+					background-color: $clNeutralDarkest;
+				}
+			}
 		}
 	}
 }
