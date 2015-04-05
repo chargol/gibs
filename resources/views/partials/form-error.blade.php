@@ -1,0 +1,1 @@
+{!! $errors->first($attribute, '<div class="form-lined__error">:message</div>') !!}

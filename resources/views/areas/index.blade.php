@@ -3,7 +3,7 @@
 @section('app.page-title', 'Gebietsareale')
 
 @section('app.headroom')
-	<a href="/area/create" class="gb-btn">Hinzufügen</a>
+	<a href="{{ route('area.create') }}" class="gb-btn">Hinzufügen</a>
 @stop
 
 @section('app.content')

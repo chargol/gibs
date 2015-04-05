@@ -52,9 +52,9 @@ class AreaController extends Controller {
 	 */
 	public function store(AreaCreateRequest $request)
 	{
-		$this->areas->create($request->all());
+		Area::create($request->all());
 
-		return redirect('/area');
+		return redirect()->route('areas');
 	}
 
 	/**

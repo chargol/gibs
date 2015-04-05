@@ -31,12 +31,20 @@
 	border: 3px solid $clNeutralDarker;
 	border-radius: 3px;
 
+	background-color: transparent;
+
+	@include option(accent) {
+		color: $clAction;
+		border-color: $clAction;
+	}
+
 	&:hover,
 	&:focus {
 		color: $clPaper;
 		border-color: $clAction;
 		background-color: $clAction;
 		text-decoration: none;
+		outline: none;
 	}
 
 	&:active {
