@@ -68,5 +68,5 @@ Route::get('areale', [
 /*==========  Home-Page  ==========*/
 
 Route::get('/', function() {
-	return redirect()->route('areas.index');
+	return redirect()->route('areas');
 });
