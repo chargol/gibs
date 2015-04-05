@@ -3,7 +3,7 @@
 use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 
 class TestCase extends IntegrationTest {
-
+	
 	/**
 	 * Creates the application.
 	 *
@@ -17,5 +17,4 @@ class TestCase extends IntegrationTest {
 
 		return $app;
 	}
-
 }

@@ -1,13 +1,15 @@
 <?php
 
-use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
+class ExampleTest extends TestCase {
 
-class ExampleTest extends IntegrationTest {
-
-	 /** @test */
-	public function test()
+	/**
+	 * A basic functional test example.
+	 *
+	 * @return void
+	 */
+	public function testBasicExample()
 	{
-	   $this->visit('/');
+		$this->visit('/');
 	}
 
 }
