@@ -2,14 +2,10 @@
 
 class ExampleTest extends TestCase {
 
-	/**
-	 * A basic functional test example.
-	 *
-	 * @return void
-	 */
-	public function testBasicExample()
+	 /** @test */
+	public function it_displays_a_homepage()
 	{
-		$this->visit('/');
+	   $this->visit('/');
 	}
 
 }

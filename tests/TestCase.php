@@ -16,5 +16,7 @@ class TestCase extends IntegrationTest {
 		$app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
 		return $app;
+
 	}
+	
 }
