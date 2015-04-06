@@ -54,6 +54,12 @@ Route::get('field/create/{shortcut}/area', [
 // Route::resource('area', 'AreaController');
 /*==========  Field-Routes  ==========*/
 
+// Saving a new field and add it to an area.
+Route::post('gebiet/', [
+	'as' => 'field.store',
+	'uses' => 'FieldController@store'
+]);
+
 // View for adding a new field to an area.
 Route::get('gebiet/anlegen/{area_id}', [
 	'as' => 'field.create',

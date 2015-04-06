@@ -40,7 +40,7 @@ class AreaResourceTest extends TestCase {
 	   		->verifyInDatabase('areas', $area);
 	}
 
-	 /** @test */
+	/** @test */
 	public function it_validates_data_before_saving_a_new_area()
 	{
 	   // Required Name-Field

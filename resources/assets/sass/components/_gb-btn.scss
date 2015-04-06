@@ -33,7 +33,7 @@
 
 	background-color: transparent;
 
-	@include option(accent) {
+	@include option(attention) {
 		color: $clAction;
 		border-color: $clAction;
 	}

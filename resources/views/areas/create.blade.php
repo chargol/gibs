@@ -23,7 +23,7 @@
 				</div>
 
 				<div class="form-group">
-					<button type="submit" class="gb-btn --accent">Neu anlegen</button>
+					<button type="submit" class="gb-btn --attention">Neu anlegen</button>
 					<a href="{{ route('areas') }}" class="gb-btn">Zurück</a>
 				</div>
 

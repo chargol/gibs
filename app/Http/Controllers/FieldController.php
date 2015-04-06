@@ -43,25 +43,15 @@ class FieldController extends Controller {
 		$this->ownerRepo = $ownerRepo;
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index($shortcut)
-	{
-		$area = $this->areaRepo->where('shortcut', $shortcut)->first();
-		return view('fields.index', compact('area'));
-	}
 
 	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
-	public function create($shortcut)
+	public function create($area_id)
 	{ 
-		$area = $this->areaRepo->where('shortcut', $shortcut)->first();
+		$area = Area::find($area_id);
 		return view('fields.create', compact('area'));
 	}
 
@@ -72,13 +62,16 @@ class FieldController extends Controller {
 	 */
 	public function store(FieldCreateRequest $request)
 	{	
-		$area = $this->areaRepo->find($request->area_id);
-		$fieldRepo = $area->fields()->orderBy('number', 'desc')->get();
-		$request['number'] = ($fieldRepo->count() > 0) ? ++$fieldRepo->first()->number : 1;
+		$area = Area::find($request->area_id);
+		
+		// Generating Field-Number.
+		$fields = $area->fields()->orderBy('number', 'desc')->get();
+		$request['number'] = ($this->areFieldsAvailable($fields)) ? $this->getNextFieldNumber($fields) : 1;
 
-		$this->fieldRepo->create($request->all());
+		// Storing new Field.
+		Field::create($request->all());
 
-		return redirect()->route('area.fields', $area->shortcut);
+		return redirect()->route('area.fields', $area->id);
 	}
 
 	/**
@@ -105,37 +98,15 @@ class FieldController extends Controller {
 		return view('fields.show', compact('field', 'field_is_available', 'protocols'));
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
+
+	private function getNextFieldNumber($fields) {
+		return ++$fields->first()->number;
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+	public function areFieldsAvailable($fields)
 	{
-		//
+		return ($fields->count() > 0); 
 	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+	
 
 }

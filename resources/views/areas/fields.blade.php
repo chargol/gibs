@@ -3,7 +3,7 @@
 @section('app.page-title', $area->name)
 
 @section('app.headroom')
-	<a href="#" class="gb-btn">Hinzufügen</a>
+	<a href="{{ route('field.create', $area->id) }}" class="gb-btn">Hinzufügen</a>
 @endsection
 
 @section('app.content')
