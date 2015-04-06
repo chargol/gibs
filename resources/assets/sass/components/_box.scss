@@ -15,7 +15,7 @@ $heightBox: 80px;
 	height: $heightBox;
 	
 	color: $clText;
-	border-radius: 3px;
+	border-radius: $globalBorderRadius;
 	background-color: $clNeutralDarkest;
 	overflow: hidden;
 
