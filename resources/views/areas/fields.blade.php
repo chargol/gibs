@@ -3,7 +3,7 @@
 @section('app.page-title', $area->name)
 
 @section('app.headroom')
-	<a href="/field/create/{{ $area->shortcut }}/area" class="btn btn-sm btn-primary">Gebiet hinzufügen</a>
+	<a href="#" class="gb-btn">Hinzufügen</a>
 @endsection
 
 @section('app.content')
@@ -26,14 +26,14 @@
 								</p>
 							</div>
 						</div>
-						<a href="{{ route('field.show', $field->id) }}" class="cardbox__action">
-							<span class="gbicon gbicon-chevron-right"></span>
+						<a href="#" class="cardbox__action">
+							<span class="gb-icon gb-icon-chevron-right"></span>
 						</a>
 					</div>
 
 					<ul class="cardbox__menue col-md-4">
 						<li>
-							<a href="#"><span class="gbicon gbicon-trashcan"></span></a>
+							<a href="#"><span class="gb-icon gb-icon-trashcan"></span></a>
 						</li>
 					</ul>
 

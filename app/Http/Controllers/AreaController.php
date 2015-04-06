@@ -31,8 +31,7 @@ class AreaController extends Controller {
 	{
 		$area = Area::find($id);
 
-		return "Gebiete von $area->name";
-		// return view('areas.fields', compact('area'));
+		return view('areas.fields', compact('area'));
 	}
 
 	/**

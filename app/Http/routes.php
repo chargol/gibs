@@ -50,8 +50,15 @@ Route::get('field/create/{shortcut}/area', [
 	'as'   => 'field.create',
 	'uses' => 'FieldController@create'
 ]);
-Route::resource('field', 'FieldController', ['except' => ['index','create']]);
+// Route::resource('field', 'FieldController', ['except' => ['index','create']]);
 // Route::resource('area', 'AreaController');
+/*==========  Field-Routes  ==========*/
+
+// View for adding a new field to an area.
+Route::get('gebiet/anlegen/{area_id}', [
+	'as' => 'field.create',
+	'uses' => 'FieldController@create'
+]);
 
 /*==========  Area-Routes  ==========*/
 
